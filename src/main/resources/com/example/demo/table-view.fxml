@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.VBox?>
+
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Button?>
+<VBox alignment="CENTER" stylesheets="@css/styles.css" spacing="20.0" xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.demo.controller.AddLineController">
+    <HBox alignment="CENTER">
+        <Label fx:id="welcomeText" text="Tableau récapitulatif des dépenses"/>
+    </HBox>
+    <TableView fx:id="table">
+        <columns>
+            <TableColumn editable="false" text="Période">
+                <cellValueFactory>
+                    <PropertyValueFactory property="periode"/>
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn editable="false" text="Total">
+                <cellValueFactory>
+                    <PropertyValueFactory property="total"/>
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn editable="false" text="Logement">
+                <cellValueFactory>
+                    <PropertyValueFactory property="logement"/>
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn editable="false" text="Nourriture">
+                <cellValueFactory>
+                    <PropertyValueFactory property="nourriture"/>
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn editable="false" text="Sorties">
+                <cellValueFactory>
+                    <PropertyValueFactory property="sorties"/>
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn editable="false" text="Voiture/Transport">
+                <cellValueFactory>
+                    <PropertyValueFactory property="transport"/>
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn editable="false" text="Voyage">
+                <cellValueFactory>
+                    <PropertyValueFactory property="voyage"/>
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn editable="false" text="Impôts">
+                <cellValueFactory>
+                    <PropertyValueFactory property="impot"/>
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn editable="false" text="Autres">
+                <cellValueFactory>
+                    <PropertyValueFactory property="autres"/>
+                </cellValueFactory>
+            </TableColumn>
+        </columns>
+        <items>
+            <FXCollections fx:factory="observableArrayList">
+
+            </FXCollections>
+        </items>
+    </TableView>
+    <HBox alignment="CENTER">
+        <Button fx:id="btn" text="Ajouter" onAction="#addLine" />
+    </HBox>
+</VBox>

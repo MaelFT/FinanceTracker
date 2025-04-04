@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.chart.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.controller.FinanceController">
+    <top>
+        <HBox spacing="10" style="-fx-padding: 10; -fx-background-color: #EAEAEA;">
+            <Label text="Tableau de bord" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+            <ComboBox fx:id="dateSelector"/>
+        </HBox>
+    </top>
+
+    <center>
+        <HBox spacing="20" style="-fx-padding: 20;">
+
+            <VBox>
+                <Label text="Répartition des dépenses" style="-fx-font-size: 14px;"/>
+                <PieChart fx:id="pieChart"/>
+            </VBox>
+
+            <VBox>
+                <Label text="Évolution des dépenses" style="-fx-font-size: 14px;"/>
+                <LineChart fx:id="lineChart" createSymbols="true">
+                    <xAxis>
+                        <CategoryAxis fx:id="xAxis" label="Date"/>
+                    </xAxis>
+                    <yAxis>
+                        <NumberAxis fx:id="yAxis" label="Montant"/>
+                    </yAxis>
+                </LineChart>
+            </VBox>
+
+        </HBox>
+    </center>
+
+</BorderPane>

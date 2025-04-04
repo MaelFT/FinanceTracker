@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.VBox?>
+
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.GridPane?>
+<VBox alignment="CENTER" stylesheets="@css/styles.css" spacing="20.0" xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.demo.controller.NewExpense">
+  <GridPane xmlns:fx="http://javafx.com/fxml/1" fx:id="gridPane" alignment="CENTER" hgap="10" vgap="10" styleClass="grid-pane">
+    <Label text="Période:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+    <TextField GridPane.columnIndex="1" GridPane.rowIndex="0" fx:id="periodeField" />
+
+    <Label text="Logement:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+    <TextField GridPane.columnIndex="1" GridPane.rowIndex="2" fx:id="logementField" />
+
+    <Label text="Nourriture:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+    <TextField GridPane.columnIndex="1" GridPane.rowIndex="3" fx:id="nourritureField" />
+
+    <Label text="Sorties:" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+    <TextField GridPane.columnIndex="1" GridPane.rowIndex="4" fx:id="sortiesField" />
+
+    <Label text="Transport:" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+    <TextField GridPane.columnIndex="1" GridPane.rowIndex="5" fx:id="transportField" />
+
+    <Label text="Voyage:" GridPane.columnIndex="0" GridPane.rowIndex="6" />
+    <TextField GridPane.columnIndex="1" GridPane.rowIndex="6" fx:id="voyageField" />
+
+    <Label text="Impôts:" GridPane.columnIndex="0" GridPane.rowIndex="7" />
+    <TextField GridPane.columnIndex="1" GridPane.rowIndex="7" fx:id="impotField" />
+
+    <Label text="Autres:" GridPane.columnIndex="0" GridPane.rowIndex="8" />
+    <TextField GridPane.columnIndex="1" GridPane.rowIndex="8" fx:id="autresField" />
+  </GridPane>
+
+  <HBox alignment="BOTTOM_RIGHT" spacing="10" styleClass="hbox">
+    <Button text="Annuler" styleClass="button" fx:id="cancelButton" onAction="#cancel"/>
+    <Button text="Créer" styleClass="button" fx:id="addButton" onAction="#create"/>
+  </HBox>
+</VBox>
