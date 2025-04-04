@@ -9,7 +9,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.control.Button?>
-<VBox alignment="CENTER" stylesheets="@css/styles.css" spacing="20.0" xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.demo.controller.AddLineController">
+<VBox alignment="CENTER" stylesheets="@css/styles.css" spacing="20.0" xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.demo.controller.AddExpenseLineController">
     <HBox alignment="CENTER">
         <Label fx:id="welcomeText" text="Tableau récapitulatif des dépenses"/>
     </HBox>
@@ -68,6 +68,6 @@
         </items>
     </TableView>
     <HBox alignment="CENTER">
-        <Button fx:id="btn" text="Ajouter" onAction="#addLine" />
+        <Button fx:id="btn" text="Ajouter" onAction="#addLine" style="-fx-background-color: #0055A4; -fx-text-fill: white;" />
     </HBox>
 </VBox>

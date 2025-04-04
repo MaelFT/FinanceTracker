@@ -13,26 +13,41 @@
     </top>
 
     <center>
-        <HBox spacing="20" style="-fx-padding: 20;">
+        <VBox spacing="20" style="-fx-padding: 20;" alignment="CENTER">
 
-            <VBox>
-                <Label text="Répartition des dépenses" style="-fx-font-size: 14px;"/>
-                <PieChart fx:id="pieChart"/>
-            </VBox>
+            <HBox spacing="40" alignment="CENTER">
+                <VBox alignment="CENTER">
+                    <Label text="Répartition des dépenses" style="-fx-font-size: 14px;"/>
+                    <PieChart fx:id="pieChart"/>
+                </VBox>
 
-            <VBox>
-                <Label text="Évolution des dépenses" style="-fx-font-size: 14px;"/>
-                <LineChart fx:id="lineChart" createSymbols="true">
+                <VBox alignment="CENTER">
+                    <Label text="Évolution des dépenses" style="-fx-font-size: 14px;"/>
+                    <LineChart fx:id="lineChart" createSymbols="true">
+                        <xAxis>
+                            <CategoryAxis fx:id="xAxis" label="Date"/>
+                        </xAxis>
+                        <yAxis>
+                            <NumberAxis fx:id="yAxis" label="Montant"/>
+                        </yAxis>
+                    </LineChart>
+                </VBox>
+            </HBox>
+
+            <VBox spacing="10" alignment="CENTER" prefWidth="600.0" maxWidth="600.0">
+                <Label text="Dépenses VS Revenus" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+                <BarChart fx:id="barChart" prefHeight="400.0" prefWidth="600.0">
                     <xAxis>
-                        <CategoryAxis fx:id="xAxis" label="Date"/>
+                        <CategoryAxis label="Période (mois)"/>
                     </xAxis>
                     <yAxis>
-                        <NumberAxis fx:id="yAxis" label="Montant"/>
+                        <NumberAxis label="Montant (€)"/>
                     </yAxis>
-                </LineChart>
+                </BarChart>
             </VBox>
 
-        </HBox>
+
+        </VBox>
     </center>
 
 </BorderPane>

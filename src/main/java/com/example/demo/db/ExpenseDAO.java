@@ -1,6 +1,5 @@
 package com.example.demo.db;
 
-import com.example.demo.controller.AddLineController;
 import com.example.demo.model.Expense;
 
 import java.sql.Connection;

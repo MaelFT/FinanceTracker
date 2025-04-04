@@ -35,7 +35,7 @@
   </GridPane>
 
   <HBox alignment="BOTTOM_RIGHT" spacing="10" styleClass="hbox">
-    <Button text="Annuler" styleClass="button" fx:id="cancelButton" onAction="#cancel"/>
-    <Button text="Créer" styleClass="button" fx:id="addButton" onAction="#create"/>
+    <Button text="Annuler" styleClass="button" fx:id="cancelButton" onAction="#cancel" style="-fx-background-color: #a40026; -fx-text-fill: white;"/>
+    <Button text="Créer" styleClass="button" fx:id="addButton" onAction="#create" style="-fx-background-color: #0055A4; -fx-text-fill: white;"/>
   </HBox>
 </VBox>

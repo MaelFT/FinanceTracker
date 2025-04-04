@@ -2,6 +2,7 @@ package com.example.demo;
 
 import com.example.demo.controller.HeaderController;
 import com.example.demo.controller.MainController;
+import com.example.demo.db.Database;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -26,6 +27,8 @@ public class Launcher extends Application {
         headerController.setMainController(mainController);
 
         root.setTop(headerNode);
+
+        Database.isOK();
 
         Scene scene = new Scene(root, 800, 480);
         stage.setTitle("Finance Tracker!");

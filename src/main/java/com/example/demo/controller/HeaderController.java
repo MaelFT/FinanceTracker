@@ -22,6 +22,7 @@ public class HeaderController {
         switch (selected) {
             case "Tableau de bord" -> mainController.loadScreen("dashboard.fxml");
             case "Dépenses" -> mainController.loadScreen("table-view.fxml");
+            case "Revenues" -> mainController.loadScreen("income-view.fxml");
         }
     }
 }

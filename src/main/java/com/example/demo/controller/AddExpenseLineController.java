@@ -17,7 +17,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.List;
 
-public class AddLineController {
+public class AddExpenseLineController {
 
     @FXML
     private TableView<Expense> table;
@@ -31,7 +31,7 @@ public class AddLineController {
 
     @FXML
     private void addLine() throws IOException {
-        URL fxmlLocation = getClass().getResource("/com/example/demo/form.fxml");
+        URL fxmlLocation = getClass().getResource("/com/example/demo/formExpense.fxml");
         if (fxmlLocation == null) {
             throw new IllegalStateException("FXML file not found.");
         }

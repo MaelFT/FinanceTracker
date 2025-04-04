@@ -1,6 +1,7 @@
 package com.example.demo.controller;
 
 import com.example.demo.db.ExpenseDAO;
+import com.example.demo.db.IncomeDAO;
 import com.example.demo.model.Expense;
 import javafx.fxml.FXML;
 import javafx.scene.chart.*;
@@ -12,6 +13,7 @@ public class FinanceController {
 
     @FXML private PieChart pieChart;
     @FXML private LineChart<String, Number> lineChart;
+    @FXML private BarChart<String, Number> barChart;
     @FXML private ComboBox<String> dateSelector;
 
     @FXML private CategoryAxis xAxis;
@@ -41,6 +43,9 @@ public class FinanceController {
                 }
             }
         });
+
+        lineChart.setAnimated(false);
+        barChart.setAnimated(false);
     }
 
     private void refreshData() {
@@ -118,5 +123,32 @@ public class FinanceController {
                 impotSeries,
                 autresSeries
         );
+
+        barChart.getData().clear();
+
+        XYChart.Series<String, Number> incomeSeries = new XYChart.Series<>();
+        incomeSeries.setName("Revenus");
+
+        XYChart.Series<String, Number> expenseSeries = new XYChart.Series<>();
+        expenseSeries.setName("Dépenses");
+
+        for (Expense expense : expenses) {
+            String periode = expense.getPeriode();
+
+            double totalExpense = expense.getLogement()
+                    + expense.getNourriture()
+                    + expense.getSorties()
+                    + expense.getTransport()
+                    + expense.getVoyage()
+                    + expense.getImpot()
+                    + expense.getAutres();
+
+            double totalIncome = IncomeDAO.getTotalFromDate(periode);
+
+            incomeSeries.getData().add(new XYChart.Data<>(periode, totalIncome));
+            expenseSeries.getData().add(new XYChart.Data<>(periode, totalExpense));
+        }
+
+        barChart.getData().addAll(incomeSeries, expenseSeries);
     }
 }

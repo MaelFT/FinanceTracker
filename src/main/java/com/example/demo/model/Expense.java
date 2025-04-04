@@ -59,4 +59,7 @@ public class Expense {
         return autres;
     }
 
+    public Float getTotal() {
+        return total;
+    }
 }

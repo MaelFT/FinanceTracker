@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Button?>
+
+<VBox alignment="CENTER" stylesheets="@css/styles.css" spacing="20.0" xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.demo.controller.AddIncomeLineController">
+
+    <HBox alignment="CENTER">
+        <Label fx:id="welcomeText" text="Tableau récapitulatif des revenus" />
+    </HBox>
+
+    <TableView fx:id="table">
+        <columns>
+            <TableColumn text="Période">
+                <cellValueFactory>
+                    <PropertyValueFactory property="periode" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn text="Total">
+                <cellValueFactory>
+                    <PropertyValueFactory property="total" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn text="Salaire">
+                <cellValueFactory>
+                    <PropertyValueFactory property="salaire" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn text="Aides">
+                <cellValueFactory>
+                    <PropertyValueFactory property="aides" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn text="Auto-entreprise">
+                <cellValueFactory>
+                    <PropertyValueFactory property="autoEntreprise" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn text="Revenus passifs">
+                <cellValueFactory>
+                    <PropertyValueFactory property="revenusPassifs" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn text="Autres">
+                <cellValueFactory>
+                    <PropertyValueFactory property="autres" />
+                </cellValueFactory>
+            </TableColumn>
+        </columns>
+        <items>
+            <FXCollections fx:factory="observableArrayList" />
+        </items>
+    </TableView>
+
+    <HBox alignment="CENTER">
+        <Button fx:id="btn" text="Ajouter" onAction="#addLine" style="-fx-background-color: #0055A4; -fx-text-fill: white;" />
+    </HBox>
+
+</VBox>
